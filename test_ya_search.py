@@ -2,7 +2,7 @@ import pytest
 from selene import browser, have
 
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 def open_browser():
     browser.config.window_width = 1280
     browser.config.window_height = 800
