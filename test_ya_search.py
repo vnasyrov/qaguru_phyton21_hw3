@@ -16,7 +16,6 @@ def test_input_value(setup_browser):
     browser.element('input[name="text"]').should(have.value('погода Санкт-Петербург'))
 
 def test_broke_search(setup_browser):
-    query = '"Жаброкогтельный флюкскварц 38QZ-LR-α"'
-    browser.element('#text').type(query).press_enter()
+    browser.element('#text').type('"Жаброкогтельный флюкскварц 38QZ-LR-α"').press_enter()
     browser.element('.RequestMeta-Message').should(have.text('Точного совпадения не нашлось. Показаны результаты по запросу без кавычек.')
     )
